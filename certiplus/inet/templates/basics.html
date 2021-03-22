@@ -1,0 +1,259 @@
+<html>
+    <head>
+        <title>
+        {% block title %}HOME{% endblock  %}
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+        {% load static %}
+        {% block css %}
+        
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/my.css' %}">
+    </head>
+    <body>
+    
+
+    {% comment %} Top-header {% endcomment %}
+        
+        <header>
+            <div class="container top-head">
+                <div class="row">
+                    <div class="sm-2">
+                    <div class='email'><i class="fa fa-envelope" aria-hidden="true"></i><a href="#">Contact@CertiPlus.Com</a></div>
+                    </div>
+                    
+                    <div clas="sm-10">
+                    <ul class="list-inline right">
+                        <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="#">Find a Test Center</a></li>
+                        <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="#">Validate Your Certificate</a></li>
+                        <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="#">Contact Us</a></li>
+                        <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="#">Enquiry</a></li>
+
+                    </ul>
+                    </div>
+
+
+                </div>
+               </div>
+            </div>
+       </header>
+
+       {% comment %} second header {% endcomment %}
+    <div class="container-fluid">
+        <div class="row top-nemu">
+            <div class="col-sm-2">
+                <div class="logo"> <img src="/media/{{logo.image}}"></div>
+            </div>
+            <div class="col-sm-2 menu">
+                <div class="dropdown"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+                     <li><a href="#">Level 1</a></li>
+                </div>
+            </div>
+             <div class="col-sm-4">
+                <div class="input-group_2">
+                <input type="text" placeholder="Search Certifications / Exams / Content by Name..." style="font-family: inherit !important;" class="typeahead form-control search_btn_width" data-provide="typeahead" autocomplete="off">
+                <div class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="wrap">
+  <button class="button">Submit</button>
+</div>
+            </div>
+            <div class="col-sm-2">
+                    
+                    <div>
+                            <p data-toggle="modal" data-target="#MyLoginMix" onclick="BackToSelection()" class="pointer disply">
+                                <img src="/media/images/user.png" class="margin_12">
+                                <span style="padding: 20px;">CertiPlus</span><br>
+                                <span style="margin-left: 28px;">LOGIN</span> <span>| SIGNUP</span>
+                            </p>
+                    </div>
+                </div>
+
+
+        </div>
+    </div>  
+    <nav class="social">
+			<ul>
+				<li><a href="">Twitter<span style="color: red !important;"><i class="fab fa-twitter"></i></span></a></li>
+				<li class="fac"><a href="">Facebook <i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="">Linkedin <i class="fab fa-Linkedin"></i></a></li>
+				<li><a href="">Instagram <i class="fab fa-instagram "></i></a></li>
+				<li><a href="">pinterest<i class="fab fa-pinterest"></i></a></li>
+			</ul>
+		</nav>
+    {% block Content  %}{% endblock %}
+    
+
+    {% comment %} this is footer {% endcomment %}
+
+       <footer class="footer">
+    <div class="container-fluid footer-one">
+       <div class="container ">
+            <div class="row ft ">
+                <div class="col-sm-2 ft ">
+                    <p class="heding-footer">
+                        <b>Platform</b>
+                    </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                         <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                         </p>
+                        <p>
+                             <a href="#" class="menu_color">
+                            Become a Test Center
+                            </a>
+                        </p>
+                         <p>
+                            <a href="#" class="menu_color">
+                            Become a Test Center
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                
+                </div>
+                <div class="col-sm-12 col-md-2 ft">
+                    <p class="heding-footer">
+                        <b>Platform</b>
+                    </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                                 Become a Test Center
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                                Become a Test Center
+                            </a>
+                        </p>
+                         <p>
+                            <a href="#" class="menu_color">
+                                Become a Test Center
+                            </a>
+                         </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                                Become a Test Center
+                            </a>
+                        </p>
+                         <p>
+                            <a href="#" class="menu_color">
+                                Become a Test Center
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                
+                </div>
+                <div class="col-sm-12 col-md-2 ft ">
+                    <p class="heding-footer">
+                        <b>Platform</b>
+                    </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                         <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                         </p>
+                        <p>
+                             <a href="#" class="menu_color">
+                            Become a Test Center
+                            </a>
+                        </p>
+                         <p>
+                            <a href="#" class="menu_color">
+                            Become a Test Center
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                
+                </div>
+                <div class="col-sm-12 col-md-2 ft ">
+                    <p class="heding-footer">
+                        <b>Platform</b>
+                    </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                         <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                         </p>
+                        <p>
+                             <a href="#" class="menu_color">
+                            Become a Test Center
+                            </a>
+                        </p>
+                         <p>
+                            <a href="#" class="menu_color">
+                            Become a Test Center
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="menu_color">
+                             Become a Test Center
+                            </a>
+                        </p>
+                
+                </div>
+                <div class="col-sm-12 col-md-4 ft">
+                    <h1 class="certi_logo">
+                        <span style="color:#faaa18;">Certi</span><span>Plus</span>
+                    </h1>
+                    <p class="logo_css">
+                    Global Certification Programs
+                  </p>
+                </div> 
+                
+            <div>
+        </div>
+    </div>
+       </footer>
+    </body>
+</html>
