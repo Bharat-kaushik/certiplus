@@ -13,3 +13,22 @@ class product(models.Model):
 
     def __str__(self):
         return self.name
+class GrowSection(models.Model):
+    title = models.CharField(max_length=250,null=True)
+    color = models.CharField(max_length=10,null=True)
+
+
+class GrowSubSection(models.Model):
+    title = models.CharField(max_length=250, null=True)
+    image = models.ImageField(upload_to="images/SubGrow", default="")
+    description = models.TextField(null=True)
+    section = models.ForeignKey(GrowSection, on_delete=models.CASCADE)
+
+
+class SubSectionDetails(models.Model):
+    image = models.ImageField(upload_to="images/SubGrow", default="")
+    description = models.TextField(null=True)
+    sub_section = models.OneToOneField(GrowSubSection,on_delete=models.CASCADE)
+
+
+

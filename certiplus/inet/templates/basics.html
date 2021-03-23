@@ -1,4 +1,5 @@
 <html>
+{% block head %}
     <head>
         <title>
         {% block title %}HOME{% endblock  %}
@@ -7,12 +8,20 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-        {% load static %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/slider.css" type="text/css">
+        <style>
+
         {% block css %}
-        
-        {% endblock %}
-        <link rel="stylesheet" href="{% static 'css/my.css' %}">
+         {% endblock %}
+        </style>
+
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/my.css' %}">
     </head>
+{% endblock  %}
     <body>
     
 
@@ -48,19 +57,23 @@
                 <div class="logo"> <img src="/media/{{logo.image}}"></div>
             </div>
             <div class="col-sm-2 menu">
-                <div class="dropdown"> 
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-                     <li><a href="#">Level 1</a></li>
-                </div>
             </div>
-             <div class="col-sm-4">
-                <div class="input-group_2">
-                <input type="text" placeholder="Search Certifications / Exams / Content by Name..." style="font-family: inherit !important;" class="typeahead form-control search_btn_width" data-provide="typeahead" autocomplete="off">
-                <div class="input-group-addon">
-                    <i class="fa fa-search"></i>
-                </div>
-            </div>
-            </div>
+             <div class="col-sm-4"></div>
+
+<!--            <div class="col-sm-2 menu">-->
+<!--                <div class="dropdown"> -->
+<!--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>-->
+<!--                     <li><a href="#">Level 1</a></li>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--             <div class="col-sm-4">-->
+<!--                <div class="input-group_2">-->
+<!--                <input type="text" placeholder="Search Certifications / Exams / Content by Name..." style="font-family: inherit !important;" class="typeahead form-control search_btn_width" data-provide="typeahead" autocomplete="off">-->
+<!--                <div class="input-group-addon">-->
+<!--                    <i class="fa fa-search"></i>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </div>-->
             <div class="col-sm-2">
                 <div class="wrap">
   <button class="button">Submit</button>
@@ -89,8 +102,14 @@
 				<li><a href="">pinterest<i class="fab fa-pinterest"></i></a></li>
 			</ul>
 		</nav>
-    {% block Content  %}{% endblock %}
-    
+    {% block Content  %}
+   
+    <script type="JavaScript/text">
+     {% block script %}
+    {% endblock script %}
+    </script>
+     
+    {% endblock Content %}
 
     {% comment %} this is footer {% endcomment %}
 

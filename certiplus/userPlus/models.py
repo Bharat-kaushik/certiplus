@@ -1,4 +1,6 @@
 from __future__ import unicode_literals
+from django.core.exceptions import ValidationError
+from django.contrib import messages
 from django.db import models
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
@@ -143,5 +145,8 @@ class Otp(models.Model):
 
 
 class Logo(models.Model):
-    logo  = models.OneToOneField(User,on_delete=models.CASCADE,default="" )
+    # logo  = models.OneToOneField(User,on_delete=models.CASCADE,default="" )
     image = models.ImageField(upload_to="logo/images", default="")
+
+
+
