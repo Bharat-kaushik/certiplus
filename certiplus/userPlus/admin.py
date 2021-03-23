@@ -14,7 +14,7 @@ from userPlus.models import Logo
 
 
 
-admin.site.register(Logo)
+
 
 sensitive_post_parameters_m = method_decorator(sensitive_post_parameters())
 
@@ -133,3 +133,13 @@ admin.site.register(models.Company, BaseCompanyAdmin)
 admin.site.register(models.User, BaseUserAdmin)
 admin.site.register(Country)
 admin.site.register(Otp)
+
+
+class LogoAdmin(ModelAdmin):
+    def has_add_permission(self, request):
+        if len(Logo.objects.all()) >= 1:
+            return False
+        else:
+            return True
+
+admin.site.register(Logo, LogoAdmin)
