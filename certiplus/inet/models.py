@@ -53,6 +53,7 @@ class SubContectDetails(models.Model):
     sub_section = models.OneToOneField(ContectSubSections,on_delete=models.CASCADE)
     def __str__(self):
         return self.description
-
+class News(models.Model):
+    news = models.TextField(null=True)
 
 
