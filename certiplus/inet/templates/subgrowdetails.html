@@ -1,0 +1,55 @@
+{% extends "basics.html" %}
+
+{% block head }
+    {% block css %}
+
+.first{
+    border:2px solid;
+}
+.BannerBack2 {
+    height: 300px;
+    background: linear-gradient(to right,rgba(228, 104, 31, 0.85) 0%,rgba(41, 121, 212, 0.85) 100%);
+}
+.HeadingCer_Color {
+    font-family: Stilu-Regular;
+    font-size: 41px;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    top: 30%;
+}
+
+{% endblock %}
+
+
+ {% block  Content%}
+   <div class="BookExam_Back3">
+    <div class="BannerBack2">
+        <div class="container">
+            <div class="row">
+                <div>
+                    
+                    <h3 class="HeadingCer_Color">Detailed Information</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    {% for i in logo.grow %}
+        <div class="col-sm-4 mx-5 my-5" >
+        <img style="display:block;max-width:100%;height:auto" src="/media/{{i.image}}">
+        </div>
+        <div class="col-sm-6 my-5">
+        <h3 style="font-family: Stilu-Regular;font-size: 30px;color: #9c9a9a;">{{i.sub_section.title}}</h3>
+        <p style="box-sizing: inherit; margin-right: 0px; margin-left: 0px; padding: 0px; font-size: 15px; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(67, 79, 102); font-family: &quot;Open Sans&quot;, sans-serif; letter-spacing: normal; -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;"><span style="background-color: rgb(252, 252, 252); color: rgb(51, 51, 51); font-family: Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 18px; font-variant-ligatures: common-ligatures; text-align: justify;">{{i.description}}</span></p>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+
+ {% endblock Content %}
