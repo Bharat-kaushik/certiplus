@@ -1,0 +1,41 @@
+{% extends "basics.html" %}
+
+{% block head }
+    {% block css %}
+
+.first{
+    border:2px solid;
+}
+
+{% endblock %}
+
+
+ {% block  Content%}
+<div class="container">
+        <div class="row">
+
+        {% for i in logo.grow %}
+
+            <div class="col-sm-3  my-5 mr-5 mb-5 first">
+                 <img src="/media/{{i.image}}" alt="Develop Your Vision | CertiPlus" title="Develop Your Vision | CertiPlus" class="img-responsive" style="height: 199px;width: 100%;border: 1px solid #dddddd54;">
+                    <div>
+                        <h3>{{i.title}}</h3>
+                    </div>
+                    <div style="width: 100%;height: 125px;overflow: hidden;" class="text-justify">
+                        <p>{{i.description}}<br></p>
+                    </div>
+
+                    <div style="position: absolute;bottom: 15px;right: 16px;margin-bottom: 5%;">
+
+                        <a href="/SubGrowdetails/{{i.id}}" class="ReadMore_Back"><button class="btn">Read More</button></a>
+                    </div>
+            </div>
+
+
+        {% endfor %}
+
+    </div>
+</div>
+
+
+ {% endblock Content %}
