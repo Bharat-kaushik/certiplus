@@ -2,80 +2,36 @@
 
 {% block head }
     {% block css %}
-.welcome{
-  margin-top:20px
-  }
-.heading{
-  text-align: center;
-    font-size:30px;
-padding-bottom: 3%;
 
-}
-.button {
-margin-bottom:0px;
-poistion : absolute
-
-}
-.line{
-color:black;
-width:10px;
-height:20px;
-
-}
 .first{
-background-color:red;
-margin-left: 50% ;
-border: 1px solid;
-height : 300px;
-width:10%;
-margin:1px;
-position: relative;
-border-bottom-right-radius:100px
-
-}
-.first:hover{
-background-color:blue;
-}
-.first { transition: all .2s ease-in-out; }
-.first:hover { transform: scale(1.1); }
-.second{
-background-color:yellow;
-border: 1px solid;
-height : 300px;
-width:10%;
-position: relative;
-
-}
-.p{
-position: absolute;
-font-size:40px;
-padding-top:20px;
-color:white;
-font-family:Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-.third{
-background-color:blue;
-border: 1px solid;
-height : 300px;
-width:10%;
-position: relative;
+    border:2px solid;
 }
 
 {% endblock %}
 
 
  {% block  Content%}
-
-
 <div class="container">
-    <div class="row">
-        {% for i in logo.grow %}
-        <div class="col-sm-3 mr-5 mb-5 first">
-            <p class="p"><b>{{i.title}}</b></p>
+        <div class="row">
 
-            <a href="SubGrow/i.section" > read more </a>
-            <h1>{{i.section}}</h1>
-        </div>
+        {% for i in logo.grow %}
+
+            <div class="col-sm-3  my-5 mr-5 mb-5 first">
+                 <img src="/media/{{i.image}}" alt="Develop Your Vision | CertiPlus" title="Develop Your Vision | CertiPlus" class="img-responsive" style="height: 199px;width: 100%;border: 1px solid #dddddd54;">
+                    <div>
+                        <h3>{{i.title}}</h3>
+                    </div>
+                    <div style="width: 100%;height: 125px;overflow: hidden;" class="text-justify">
+                        <p>{{i.description}}<br></p>
+                    </div>
+
+                    <div style="position: absolute;bottom: 15px;right: 16px;margin-bottom: 5%;">
+
+                        <a href="/SubGrowdetails/{{i.id}}" class="ReadMore_Back"><button class="btn">Read More</button></a>
+                    </div>
+            </div>
+
+
         {% endfor %}
 
     </div>

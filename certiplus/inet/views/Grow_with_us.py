@@ -6,11 +6,16 @@ from inet.models import GrowSubSection
 
 
 def SubGrow(request,section):
-   print(section)
-   grow = GrowSubSection.objects.all()
-   logo = Logo.objects.all().first()
-   details = dict()
-   details['grow'] = grow
-   print(details['grow'][0].section)
-   details['logo'] = logo
-   return render(request,'SubGrow.html',{"logo": details})
+
+   grow = GrowSubSection.objects.filter(section=section)
+   print(grow)
+   if len(grow)>=1:
+      logo = Logo.objects.all().first()
+      details = dict()
+      details['grow'] = grow
+      for i in details['grow']:
+         print(i.id)
+      details['logo'] = logo
+      return render(request,'SubGrow.html',{"logo": details})
+   else:
+      raise Exception("not find any grow section")

@@ -65,7 +65,7 @@ background-color:blue;
                 We recommend a broad portfolio of globally acknowledged certifications that comprise Project Management, Certified Sales and Marketing Professional, Business Management Professional, Certified Cloud Computing Certifications, Data Center, Information Security Certifications, Premium IT Certifications, Certified Software Tester, Professional Management, Lean Six Sigma, ISO and many more. CertiPlus Certifications are extensively acquired and accepted by Major Industry Professionals, Corporates and various Institutions.
             </p>
       </div>
-  
+
       <div class="col-sm-5">
       {%load static%}
       <img src="media/images/aboutCertiplus (1).png" style="    height: 336px;
@@ -74,68 +74,32 @@ background-color:blue;
   </div>
 
 </div>
+{% for key, values in context.items %}
 <div class="col-sm-12 " >
-    <p class="heading"><b>Grow Yourself with CertiPlus</b></p>
+    <p class="heading"><b>{{key}}</b></p>
     <div class="line"></div>
 </div>
 <div class="container">
     <div class="row">
-        {% for i in logo.grow %}
-        {% if i.background_color  %}
-        <div class="col-sm-3 mr-5 mb-5 first" style="background-color:{{i.background_color}};">
-            {% else %}
-            <div class="col-sm-3 mr-5 mb-5 first" style="background-color:red;">
-            {% endif %}
-            <p class="p" style="color:{{i.text_color}}"><b>{{i.title}}</b></p>
-            <a href="/SubGrow/{{i.id}}"><button class="btn">Read More</button></a>
-            <h1>{{i.id}}</h1>
+        {% for i in values %}
+            {% if i.background_color  %}
+            <div class="col-sm-3 mr-5 mb-5 first" style="background-color:{{i.background_color}};">
+                {% else %}
+                <div class="col-sm-3 mr-5 mb-5 first" style="background-color:red;">
+                {% endif %}
+                <p class="p" style="color:{{i.text_color}};height: 240px;margin-bottom: 9%;" ><b>{{i.title}}</b></p>
+                <a href="/SubGrow/{{i.id}}"><button class="btn">Read More</button></a>
+                <h1>{{i.id}}</h1>
 
 
-        </div>
+            </div>
 
         {% endfor %}
 
     </div>
 </div>
+{% endfor %}
 
-
-
-
-<div class="col-sm-12" >
-    <p class="heading"><b>Connect with Us</b></p>
-    <div class="line"></div>
-</div>
-<div class="container">
-    <div class="row">
-        {% for i in logo.contect %}
-        <div class="col-sm-3 mr-5 mb-5">
-    <a href="#">
-        <img class="img-responsive" src="/media/{{i.image}}" alt="Test Schedules and Preparations" title="Test Takers Test Schedules and Preparations" style="height: 230px;width: 375px;">
-</a>
-        </div>
-    {% endfor %}
-
-    </div>
-</div>
-
-
-
-<div class="col-sm-12" >
-    <p class="heading"><b>Our Most Sought Certifications - Choose Your Domain</b></p>
-    <div class="line"></div>
-</div>
-<div class="container">
-    <div class="row">
-        {% for i in logo.contect %}
-        <div class="col-sm-3 mr-5 mb-5">
-    <a href="#">
-        <img class="img-responsive" src="/media/{{i.image}}" alt="Test Schedules and Preparations" title="Test Takers Test Schedules and Preparations" style="height: 230px;width: 375px;">
-</a>
-        </div>
-    {% endfor %}
-
-    </div>
-</div>
 
  {% endblock Content %}
 
