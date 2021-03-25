@@ -388,6 +388,17 @@ background-color:blue;
     color: #3b5998;
     font-weight: 600;
 }
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 .star_icon {
     font-size: 16px;
@@ -1250,11 +1261,21 @@ background-color:blue;
     margin-top: -8px;
     margin-right: -13px;
 }
-
+.Stay_Connected {
+    font-weight: 900;
+    color: #002a5a;
+    font-size: 34px;
+}
 .Exam_list_top {
     margin-top: 5%;
 }
-
+.text-center {
+    text-align: center;
+}
+.Stay_Backgroundcolor {
+    background-color: #F7F7F7;
+    padding: 30px;
+}
 
 {% endblock %}
 
@@ -1264,14 +1285,14 @@ background-color:blue;
 <div class="container">
   <div class="row Welcome">
       <div class="col-sm-7">
+
       <h1 style="font-weight: 700;font-size: 20px;padding-left: 5px;">Welcome To</h1>
-      <p style="font-size: 50px;font-weight: 700;line-height: 0.6;color: #faaa18;">Certi<span style="color: #2c374d;">Plus</span></p>
+      <p style="font-size: 50px;font-weight: 700;line-height: 0.6;color: #faaa18;">{{welcome.first_name}}<span style="color: #2c374d;">{{welcome.last_name}}</span></p>
       <p class="text-justify" style="    color: #797979;">
-                CertiPlus Global Certification Programs is a Multinational Association that provide Customized Certification Solutions for several Professional requirements accompanied by its Offices situated in USA and other countries. Professionals keep appearing for the Certifications all over from USA, Europe and Asia. The organization’s power is to distribute standard certification solutions to continue a Multinational standard.
-                <br>
-                We recommend a broad portfolio of globally acknowledged certifications that comprise Project Management, Certified Sales and Marketing Professional, Business Management Professional, Certified Cloud Computing Certifications, Data Center, Information Security Certifications, Premium IT Certifications, Certified Software Tester, Professional Management, Lean Six Sigma, ISO and many more. CertiPlus Certifications are extensively acquired and accepted by Major Industry Professionals, Corporates and various Institutions.
+{{welcome.details|linebreaks}}
             </p>
       </div>
+
 
       <div class="col-sm-5">
       {%load static%}
@@ -1322,12 +1343,12 @@ background-color:blue;
             <div class="col-sm-8" behavior="scroll" direction="up" onmouseover="this.stop();">
                 <div class="microsoft container2">
                     <div class="marquee">
+                        {% for i in news %}
                             <a href="../../Test-Takers-Test-Schedules-and-Preparations">
-                                <p class="text_clr" style="color:#000000;margin-bottom:1%;"> &nbsp; <span class="glyphicon glyphicon-star star_icon">    </span> Test Takers Test Schedules and Preparations.</p>
+                                <p class="text_clr" style="color:#000000;margin-bottom:1%;"> &nbsp;&nbsp;<img  style="padding-right:10px;" src="media/logo/icons8-new-24.png"> <span class="glyphicon glyphicon-star star_icon">    </span>{{i.news}}</p>
                             </a>
-                            <a href="../../COVID-19-Coronavirus---Situation-Learn-more-about-how-it-could-affect-your-testing-plans">
-                                <p class="text_clr" style="color:#000000;margin-bottom:1%;"> &nbsp; <span class="glyphicon glyphicon-star star_icon">    </span> COVID-19 Coronavirus - Situation Learn more about how it could affect your testing plans.</p>
-                            </a>
+                        {% endfor %}
+
                         <div style="float: right;">
                             <p class="pull-right"></p>
                         </div>
@@ -1367,7 +1388,8 @@ background-color:blue;
             </div>
         </div>
     </div>
- {% endblock Content %}
+
+ {% endblock %}
 
 
 

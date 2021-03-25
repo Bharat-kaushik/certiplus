@@ -7,7 +7,8 @@ from .models import (
     ContectSubSections,
     SubContectDetails,
     SectionCategory,
-    News
+    News,
+    WelcomeLine
 
     )
 
@@ -20,4 +21,6 @@ admin.site.register(ContectSections)
 admin.site.register(ContectSubSections)
 admin.site.register(SubContectDetails)
 admin.site.register(News)
+admin.site.register(WelcomeLine)
+
 
