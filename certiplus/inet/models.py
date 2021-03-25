@@ -54,5 +54,12 @@ class SubContectDetails(models.Model):
     def __str__(self):
         return self.description
 
+class News(models.Model):
+    news = models.TextField(null=True)
+
+class WelcomeLine(models.Model):
+    first_name = models.CharField(max_length=50,null=True)
+    last_name = models.CharField(max_length=50,null=True)
+    details = models.TextField(null=True)
 
 
